@@ -1,10 +1,12 @@
 import json
 import google.generativeai as genai
 from openai import OpenAI
+import streamlit as st
+import os
 
 # HARDCODED KEYS (Replace with real keys or use env vars)
 # User: Paste your OpenRouter "Key for Model Requests" here
-OPENROUTER_API_KEY = "" 
+api_key = st.secrets.get("OPENROUTER_API_KEY", os.getenv("OPENROUTER_API_KEY"))
 
 def extract_logic(code_text, model_name):
     """
