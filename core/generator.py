@@ -11,7 +11,7 @@ def generate_modern_code(logic_json, target_language, api_keys_input, model_name
     
     # Determine keys to use (Input overrides hardcoded)
     # In this OpenRouter version, we only use the OpenRouter key
-    openrouter_key = api_keys_input.get("OPENROUTER_API_KEY") or OPENROUTER_API_KEY
+    openrouter_key = api_keys_input.get("api_key") or OPENROUTER_API_KEY
 
     system_prompt = f"""You are a Clean Code Expert. I will give you a list of Business Rules in JSON format.
 Your goal is to implement these rules in highly readable, idiomatic {target_language} code.
